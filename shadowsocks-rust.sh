@@ -513,7 +513,7 @@ Status(){
 
 Update_Shell(){
 	echo -e "当前版本为 [ ${sh_ver} ]，开始检测最新版本..."
-	sh_new_ver=$(wget -qO- https://raw.githubusercontent.com/myeveryheart/shadowsocks-rust/main/shadowsocks-rust.sh | grep "sh_ver=" | cut -d '=' -f 2 | tr -d '"')
+	sh_new_ver=$(wget -qO- https://raw.githubusercontent.com/myeveryheart/shadowsocks-rust/main/shadowsocks-rust.sh | grep "sh_ver=" | cut -d '=' -f 2 | tr -d '"' | head -n 1)
     [[ -z ${sh_new_ver} ]] && echo -e "${Error} 检测最新版本失败 !" && Start_Menu
 	if [[ ${sh_new_ver} != ${sh_ver} ]]; then
 		echo -e "发现新版本[ ${sh_new_ver} ]，是否更新？[Y/n]"
