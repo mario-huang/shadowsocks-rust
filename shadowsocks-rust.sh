@@ -506,7 +506,6 @@ View(){
 
 Status(){
 	echo -e "${Info} 获取 Shadowsocks Rust 活动日志 ……"
-	echo -e "${Tip} 返回主菜单请按 q ！"
 	systemctl status shadowsocks-rust
 }
 
